@@ -1,0 +1,235 @@
+	Import java.util.scanner;
+		public class life_simulator{
+			public static void main(string[]args)
+{
+
+			final string BUSINESS_MAN = "businessman";
+			final string ENGINEER = "engineer";
+			final string ARTIST = "artist";
+			final string HELPING_PROFESSION = "helping profession";
+			
+			final double BUSINESS_CHANCE = .30;
+			final double ENGINEER_CHANCE = .05;
+			final double ARTIST_CHANCE = .10;
+			final double HELPING_PROFESSION_CHANCE = .30;
+			
+			string User_name;
+			string Job;
+			string Marry;
+			string Children;
+			string Rulebreaker;
+			string Friends;
+			string Society;
+			string Lavishly;
+			
+			
+			// User Input
+			Scanner name = new scanner(system.in);	
+			System.out.println("What is your name?");
+			String User_name = name.nextline();
+			
+			Scanner job = new Scanner(System.in);
+			System.out.println("What job do you wish to have? /n Choose one of he following: /n 1.Business Man /n 2.Artist /n 3.Engineer /n 4.Helping Profession");
+			String User_job = job.nextLine();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to marry?/n yes or no");
+			String User_marriage = name.nextline();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to have children?/n yes or no");
+			String User_children = name.nextline();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to follow rules or do you wish to break them?/n yes or no");
+			String User_rules = name.nextline();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to keep in touch with your friends?/n yes or no");
+			String User_friends = name.nextline();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to meaningfully contribute to society?/n yes or no");
+			String User_society = name.nextline();
+
+			Scanner = new scanner(system.in);
+			System.out.println("Do you wish to save money or spend lavishly?/n yes or no");
+			String User_lavishly = name.nextline();
+
+
+			string user_actualjob = "";
+			string user_wealthiness = null;
+
+			string user_significantother;
+			string Wealthiness;
+			boolean user_haschildren;
+			int numberofchildren = 0;
+			boolean User_Gonetojail;
+			string user_child1N, user_child2N, user_child3N, user_child4N, user_child5N, user_child6N, user_child7N;
+			string user_child1G, user_child2G, user_child3G, user_child4G, user_child5G, user_child6G, user_child7G;
+
+			user_child1N = "Billy"
+			user_child2N = "Mikey"
+			user_child3N = "Johnny"
+			user_child4N = "Terry"
+			user_child5N = "Suzy"
+			user_child6N = "Katey"
+			user_child7N = "Sandy"
+
+			user_child1G = "Male"
+			user_child2G = "Male"
+			user_child3G = "Male"
+			user_child4G = "Male"
+			user_child5G = "Female"	
+			user_child6G = "Female"
+			user_child7G = "Female"	
+
+			/* There is a 30% chance they will have no children and 10% chance of having 1 child, 10% chance of having 2 child, 10% chance of having 3 child, 10% chance of having 4 child, 
+				10% chance of having 5 child, 10% chance of having 6 child, 10% chance of having 7 child
+			*/
+
+			double childProb = Math.random();
+
+			if(childProb <= .30){
+				user_haschildren = false;
+			} else {
+				user_haschildren = true;
+				if (childProb > .30 && childProb <= .40){
+					numberofchildren = 1;
+				} else if (childProb > .40 && childProb <= .50){
+					numberofchildren = 2;
+				} else if (childProb > .50 && childProb <= .60){
+					numberofchildren = 3;
+				} else if (childProb > .60 && childProb <= .70){
+					numberofchildren = 4;
+				} else if (childProb > .70 && childProb <= .80){
+					numberofchildren = 5;
+				} else if (childProb > .80 && childProb <= .90){
+					numberofchildren = 6;
+				} else if (childProb > .90 && childProb <= 1){
+					numberofchildren = 7;
+				}
+			}
+
+
+			//30% business man, 30% helping professional, 10% artist 5% engineer, 5% chronically unemployed
+			final double occupationprobability = Math.random();
+
+			if (occupationprobability <= 0.30){
+				actualjob = BUSINESS_MAN;
+			} else if (occupationProbability > .30 && occupationProbability <= .60){
+				actualJob = HELPING_PROFESSION;
+			} else if (occupationProbability > .60 && occupationProbability <= .65){
+				actualJob = ENGINEER;
+			} else if (occupationProbability > .65 && occupationProbability <= .75){
+				actualJob = ARTIST
+			}
+
+
+			switch(actualjob){
+				case BUSINESS_MAN:
+					if(Math.random() <= .70){
+						actualWealth = "rich";
+					} else {
+						actualWealth = "middle class";
+					}
+					break;
+				case ENGINEER:
+						actualWealth = "rich";
+					break;
+				case Artist:
+					if(Math.random() <= .10){
+						actualWealth = "rich";
+					} else {
+						actualWealth = "poor";
+					}
+					break;
+				case HELPING_PROFESSION:
+						actualWealth = "Middle class";
+					break;
+
+			}
+			
+			if(Rulebreaker.equals("yes")){
+				if (Math.random() <= .30){
+					User_Gonetojail = true;
+				} else { 
+					actualWealth = "rich";
+				}
+			}
+
+
+
+			//Constructing life paragraph
+			string lifeParagraph = "";
+			lifeparagraph  += User_name;
+			lifeparagraph  += " was an interesting person.";
+
+			if(Marry.equals("yes")){
+				lifeparagraph += ( User_name + " wants to marry.");
+			}
+
+			lifeparagraph += (name + " became a " + actualJob + "They were a " + actualWealth + "person!");
+
+			if(haschildren){
+				//state they have children
+				lifeParagraph += "They had " + numberofChildren + " children!";
+				if(wantsChildren.equals("yes")){
+					lifeParagraph += "they are sooo happy!!" :)";
+				} else {
+					lifeParagraph += "The children really stress them out!";
+				}
+				
+
+				//list children
+				if (numberofChildren >=1){
+					lifeParagraph += "their 1st child was named " + user_child1N + ". ";
+					lifeParagraph += "They were " + user_child1G + ". ";
+				}
+
+				
+				if (numberofChildren >=2){
+					lifeParagraph += "their 1st child was named " + user_child2N + ". ";
+					lifeParagraph += "They were " + user_child2G + ". ";
+				}	
+
+				if (numberofChildren >=3){
+					lifeParagraph += "their 1st child was named " + user_child3N + ". ";
+					lifeParagraph += "They were " + user_child3G + ". ";
+				}
+
+				if (numberofChildren >=4){
+					lifeParagraph += "their 1st child was named " + user_child4N + ". ";
+					lifeParagraph += "They were " + user_child4G + ". ";
+				}
+
+				if (numberofChildren >=5){
+					lifeParagraph += "their 1st child was named " + user_child5N + ". ";
+					lifeParagraph += "They were " + user_child5G + ". ";
+				}
+
+				if (numberofChildren >=6){
+					lifeParagraph += "their 1st child was named " + user_child6N + ". ";
+					lifeParagraph += "They were " + user_child6G + ". ";
+				}
+				
+				if (numberofChildren >=7){
+					lifeParagraph += "their 1st child was named " + user_child7N + ". ";
+					lifeParagraph += "They were " + user_child7G + ". ";
+				}
+
+			} else {
+				if(Children.equals("yes")){
+					lifeParagraph += "They cried every night because they had no offspring";
+				} else {
+					lifeParagraph += "They lucked out by not having any children.";
+
+				}
+
+			}
+
+		
+			System.out.Println(lifeParagraph);
+		}
+
+}
